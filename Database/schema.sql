@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS samples (
+);
+
+CREATE TABLE IF NOT EXISTS sondes (
+);
+
+CREATE TABLE IF NOT EXISTS weather (
+);
