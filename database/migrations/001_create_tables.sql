@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS source_docs (
     etl_processing_datetime TIMESTAMPTZ
 );
 
--- Fact table
+-- Fact tables
 
 CREATE TABLE IF NOT EXISTS observations (
     observation_id       BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -63,6 +63,15 @@ CREATE TABLE IF NOT EXISTS observations (
     source_doc_id        INTEGER NOT NULL,
     censor_flag_id       SMALLINT,
     qc_status_id         SMALLINT NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS etl_logs (
+    etl_log_id            INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    etl_start_datetime    TIMESTAMPTZ NOT NULL,
+    source_doc_id         INTEGER NOT NULL,
+    helper_code           TEXT NOT NULL,
+    git_commit_hash       TEXT NOT NULL
 );
 
 COMMIT;

@@ -26,5 +26,8 @@ CREATE INDEX idx_source_docs_source_organization_id
 CREATE INDEX idx_sites_water_body_id
   ON sites (water_body_id);
 
+-- etl_logs foreign keys
+CREATE INDEX idx_etl_logs_source_doc_id
+ON etl_logs (source_doc_id);
 
 COMMIT;
