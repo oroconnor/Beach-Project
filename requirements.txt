@@ -3,6 +3,5 @@ numpy
 matplotlib
 scikit-learn
 seaborn
-openpyxl
-sqlalchemy 
-sqlite3
+psycopg
+datetime

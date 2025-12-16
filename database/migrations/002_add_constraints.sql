@@ -63,6 +63,12 @@ ALTER TABLE observations
   ON UPDATE RESTRICT
   ON DELETE RESTRICT;
 
+-- etl_logs -> source_docs
+ALTER TABLE etl_logs
+  ADD CONSTRAINT fk_etl_logs_source_doc
+  FOREIGN KEY (source_doc_id)
+  REFERENCES source_docs (source_doc_id)
+  ON DELETE RESTRICT;
 
 ------------------------------------------------------------
 -- 2) UNIQUENESS CONSTRAINTS
@@ -89,6 +95,9 @@ ALTER TABLE sites
 
 ALTER TABLE source_docs
   ADD CONSTRAINT uq_filename UNIQUE (file_name);
+
+ALTER TABLE etl_logs
+  ADD CONSTRAINT uq_etl_logs_source_doc UNIQUE (source_doc_id);
 
 
 ------------------------------------------------------------
