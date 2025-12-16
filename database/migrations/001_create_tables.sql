@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS sites (
     site_name      TEXT NOT NULL,
     site_latitude  DOUBLE PRECISION,
     site_longitude DOUBLE PRECISION,
-    water_body_id  SMALLINT NOT NULL
+    water_body_id  SMALLINT
 );
 
 CREATE TABLE IF NOT EXISTS source_docs (
