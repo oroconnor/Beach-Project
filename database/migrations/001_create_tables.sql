@@ -48,8 +48,7 @@ CREATE TABLE IF NOT EXISTS source_docs (
     source_organization_id  SMALLINT NOT NULL,
     file_name               TEXT NOT NULL,
     storage_folder_path     TEXT,
-    metadata_link           TEXT,
-    etl_processing_datetime TIMESTAMPTZ
+    metadata_link           TEXT
 );
 
 -- Fact tables
